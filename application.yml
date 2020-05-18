@@ -8,8 +8,8 @@ spring:
     name: spring-cloud-dev    
 ---   
 spring:
-  profiles: dev
+  profiles: test
   application:  
-    name: spring-cloud-dev
+    name: spring-cloud-test
 
 
