@@ -1,18 +1,15 @@
-server:
-  port: 9527
-
 spring:
-  application:
-    name: zuul
+  profiles:
+    active:
+---
+spring:
+  profiles: dev
+  application:  
+    name: spring-cloud-dev    
+---   
+spring:
+  profiles: dev
+  application:  
+    name: spring-cloud-dev
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://cp7001.com:7001/eureka,http://cp7002.com:7002/eureka,http://cp7003.com:7003/eureka
-  instance:
-    instance-id: zuul网关
-zuul:
-  routes:
-    stu.serverId: stu
-    stu.path: /cp/**
-  ignored-services: stu #不能使用stu访问了
+
