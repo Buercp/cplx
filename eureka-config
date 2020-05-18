@@ -1,0 +1,43 @@
+server:
+  profiles:
+   active: dev
+---
+server:
+ port: 7001
+spring:
+  profiles: dev
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    #服务中心的IP地址
+    hostname: cp7001.com
+  client:
+    #是否注册到自己默认true
+    register-with-eureka: false
+    #false表明自己是注册中心
+    fetch-registry: false
+    #访问的url
+    service-url:
+      #eureka的地址
+      defaultZone: http://cp7001.com:7001/eureka   
+---
+server:
+ port: 7002
+spring:
+  profiles: test
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    #服务中心的IP地址
+    hostname: cp7002.com
+  client:
+    #是否注册到自己默认true
+    register-with-eureka: false
+    #false表明自己是注册中心
+    fetch-registry: false
+    #访问的url
+    service-url:
+      #eureka的地址
+      defaultZone: http://cp7002.com:7002/eureka   
